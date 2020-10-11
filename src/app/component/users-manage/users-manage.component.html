@@ -1,0 +1,41 @@
+<div class=" alert alert-success" *ngIf='message'>{{message}}</div>
+<div class="note">
+  <h1>Users Manage</h1>
+</div>
+<div  class="container tab row " id="customers"> 
+    <h3 class="col-md-3">Company Information</h3>
+    <select class="form-control col-md-3"  (change)="selectChangeHandler($event)" >
+        <option>...</option>
+        <option  *ngFor="let company of companies" value="{{company.id}}">{{company.companyName}}</option>
+      
+      </select><br><br>
+<table border="1" class="table  users">
+   
+    <thead class="">
+        <tr>
+            <th>Username</th>
+            <th>Email</th>
+            <th>Password</th>
+            <th>Delete</th>
+            <th>Update</th>
+            <th>Send Email</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let user of users">
+            <td>{{user.username}}</td>
+            <td>{{user.email}}</td>
+            <td>{{user.password}}</td>
+            <td><button (click)="deleteUser(user.id)" class="btn btn-warning">Delete User</button></td>
+            <td><button (click)="updateUser(user.id)" class="btn btn-primary">Update User</button></td>
+            <td><button (click)="sendEmail(user)" class="btn btn-primary">Send Email</button></td>
+
+        </tr>
+    </tbody>
+</table>
+
+<div class="row">
+    <button (click)="addUser()"  class="btn btn-success add">Add User</button>
+</div>
+
+</div>

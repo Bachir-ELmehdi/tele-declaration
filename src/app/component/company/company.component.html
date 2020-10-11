@@ -1,0 +1,39 @@
+<link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<!------ Include the above in your HEAD tag ---------->
+
+<div class="container register-form">
+            <div class="form">
+                <div class="note">
+                    <h1  *ngIf="test==-1">Add New <span class="comp">Company</span> </h1>
+                    <h1  *ngIf="test!=-1">Update Company</h1>
+
+                </div>
+            
+                <div class="form-content">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <input type="text" class="form-control" [(ngModel)]="company.companyName" placeholder="CompanyName *" value=""/>
+                            </div>
+                            <div class="form-group">
+                                <input type="text" class="form-control" [(ngModel)]="company.companyAdress"  placeholder="companyAdress *" />
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <input type="text" class="form-control" placeholder="id_ice For Company *" [(ngModel)]="company.id_ice"/>
+                            </div>
+                            <div class="form-group">
+                                <input type="text" class="form-control" placeholder="id_if For Company "[(ngModel)]="company.id_if"/>
+                            </div>
+                            <div class="form-group">
+                                <input type="text" class="form-control" placeholder="id_if For Company "[(ngModel)]="company.id_rc"/>
+                            </div>
+                        </div>
+                    </div>
+                    <button type="button" class="btnSubmit" (click)="saveCompanyOfUser()">Valider</button>
+                </div> 
+            </div>
+        </div>

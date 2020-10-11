@@ -1,0 +1,158 @@
+
+<div class=" col-md-6 canvas breadcrumb">
+  <label class="col-md-6">Download Your Canvas File</label>
+  <a href="assets/files/canvas.xlsx" class="download" download="ExcelFile"> <span>download</span> </a>
+</div>
+<!-- Step 1 -->
+<mat-horizontal-stepper class="tab">
+  
+  <mat-step [stepControl]="formGroup1" >
+    <div class="note">
+      Configuration
+    </div>
+    <hr>
+    <ng-template matStepLabel>Configuration</ng-template>
+    <form [formGroup]="formGroup1" >
+          <div class="form-group ">
+            <div class="row breadcrumb">
+              <div class="col-md-3">
+                <label for="exampleFormControlSelect1" >Select Type Of Declaration</label>
+              </div>
+              <div class="col-md-6 ">
+                <select class="form-control" id="exampleFormControlSelect1" (change)="selectChangeTyper($event)"
+                formControlName="firstCtrl">
+                  <option>...</option>
+                  <option *ngFor="let type  of typeDeclaration ; index as i" value="{{i}}">{{type}}</option>             
+                        
+                </select>
+              </div>
+            </div>
+          </div>
+          <div class="form-group">
+            <div class="row breadcrumb">
+            <div class="col-md-3">
+               <label for="exampleFormControlSelect1">Select Name Of Company</label>
+            </div>
+            <div class="col-md-6">
+              <select class="form-control "  (change)="selectChangeHandler($event)"  
+              id="exampleFormControlSelect1" formControlName="secondCtrl">
+                <option>...</option>
+                <option *ngFor="let company of companies" value="{{company.id}}" 
+                >{{company.companyName}}</option>
+              
+              </select>
+            </div>
+          </div>
+          </div>
+      
+        <button mat-button matStepperNext class="btn btn-info">Next</button>
+  
+    </form>
+  </mat-step>
+  <!-- End step 1 -->
+
+  <!-- step 2 -->
+  <mat-step [stepControl]="formGroup2">
+    <ng-template matStepLabel>Importation</ng-template>
+
+    <form [formGroup]="formGroup2">
+      <div class="container">
+         
+        <div class="note">
+          Import data from Excel
+        </div>
+         
+          <hr>
+         
+          <div class="tools">
+              <div class="row">
+                <!-- <div class="col-md-12"> -->
+                  <div class="noteImport col-md-6 breadcrumb">
+                  <p>upload your excel file and check the errors to correct
+                     them since you have the right to modify in the excel table
+                    incorrect values (like VAT, Invoice date ...).</p></div></div>
+                     <div class="col-md-6">
+                  <!-- <label class="col-md-6 alert alert-info">Import Your File</label> -->
+                  <button class=" btnImport col-md-6 btn btn-primary">
+                   <label>
+                      <span class="mdi mdi-file-export"> Import</span>
+                      <input hidden type="file" (change)="onFileChange($event)" multiple="false"></label>
+                  </button>
+                </div>
+                <!-- </div> -->
+               
+                <!-- </button> -->
+                <br><br>
+              
+            
+          </div>
+        <hr>
+         
+          <div class="col-md-12" style = "overflow-x: scroll;">
+            <div class="smart-table-container" style = "width: 2000px;">
+          <ng2-smart-table class="table"
+          [settings]="settings" 
+          [source]="importContacts" *ngIf="done">
+      </ng2-smart-table></div></div>
+        </div>
+      <button mat-button matStepperPrevious class="btn btn-info back">Back</button>
+      <button mat-button matStepperNext  class="btn btn-info" (click)="controlError()">Next</button>
+
+    </form>
+  </mat-step>
+<!-- End Step 2 -->
+
+<!-- step 3 -->
+  <mat-step [stepControl]="formGroup2">
+    <ng-template matStepLabel>Controls</ng-template>
+    <div class="note">
+     Gestion des Errors
+    </div>
+     
+      <hr>
+    <form [formGroup]="formGroup2">
+    <div class="alert alert-warning" *ngIf="haveErrorMissingValue">You have an error :
+       <strong> il y a des cases qui sont vide</strong></div>
+    <div class="alert alert-warning" *ngIf="haveErrorLogicMontant">You have an error :
+       <strong>Vérifier les valeurs entre (TVA,TTC,HT)</strong></div>
+    <div class="alert alert-warning" *ngIf="haveErrorLogicDate">You have an error :
+        <strong>Date du Paiment est Supérieur au date du Facture</strong></div>  
+        <div class="alert alert-warning" *ngIf="haveErrorNumFac">You have an error :
+          <strong>il y a la répétition dans numéro de facture</strong></div>  
+        <div class="alert alert-success" *ngIf="!haveErrorLogicMontant 
+        && !haveErrorMissingValue && !haveErrorLogicDate">Success :
+          <strong>all informations is edited correctly</strong></div>      
+      <button mat-button matStepperPrevious class="btn btn-info back">Back</button>
+      <button mat-button matStepperNext 
+       class="btn btn-info" *ngIf="!haveErrorLogicMontant 
+       && !haveErrorMissingValue">Next</button>
+        <strong *ngIf="haveErrorLogicMontant 
+        || haveErrorMissingValue || haveErrorLogicDate">Click Back To Correct the errors</strong>
+    </form>
+  </mat-step>
+<!-- End step 3 -->
+<!-- step 4 -->
+  <mat-step [stepControl]="formGroup2">
+    <div class="note">
+      Generation Xml File
+     </div>
+     <hr>
+    <ng-template matStepLabel>Result</ng-template>
+
+    <form [formGroup]="formGroup2">
+
+     <h2 class="">Result</h2>
+     <div class="row">
+      <div class="col-md-6"><label class="form-control">Company name</label></div>
+      <div class="col-md-6"><input type="text" class="form-control" value="Atos"></div>
+      <div class="col-md-6"><label class="form-control">Type of declaration</label></div>
+      <div class="col-md-6"><input type="text" class="form-control" value="Par Mois"></div>
+    </div>
+  
+      <button mat-button matStepperNext class="btn btn-info" (click)="finish()">Finish</button>
+
+    </form>
+  </mat-step>
+
+  <!-- End step 4 -->
+</mat-horizontal-stepper>

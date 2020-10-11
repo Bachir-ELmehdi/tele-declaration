@@ -1,0 +1,234 @@
+<!-- ============================================================== -->
+<!-- Email campaign chart -->
+<!-- ============================================================== -->
+
+<!-- bUtton test -->
+ 
+<div class="row">
+    <!-- <div class="col-md-8">
+        <div class="card">
+            <div class="card-body">
+                <h4 class="card-title">Sales Ratio</h4>
+                <div style="height: 270px;" class="mt-4">
+                        <canvas baseChart height="130" [datasets]="lineChartData" [labels]="lineChartLabels"
+                            [options]="lineChartOptions" [colors]="lineChartColors" [legend]="lineChartLegend"
+                            [chartType]="lineChartType">
+                        </canvas>
+                    </div>
+            </div>
+        </div>
+    </div> -->
+    <!-- <div class="col-md-4"> -->
+        <div class="card col-md-3 card1">
+            <div class="card-body cardH">
+                <h5 class="card-title m-b-5 stat1">Invoices Number</h5>
+                <div  class="row">
+                <div class="col-md-6">
+                  <h3 class="font-light numberinvoice">{{numberInvoice}}</h3>
+                </div>
+                <div align="center" class="col-md-6" style="margin-top:10%;">
+                    <circle-progress [percent]="70"  [space]="-10" [radius]="30" [outerStrokeWidth]="2"
+                      [innerStrokeWidth]="1" [outerStrokeColor]="'#181441'" [innerStrokeColor]="'rgb(184, 167, 192)'" [animation]="true"
+                      [animationDuration]="1000"></circle-progress>
+                  </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="card col-md-3 card2">
+            <div class="card-body cardH">
+                <h5 class="card-title m-b-5 stat2 ">Companies Number</h5>
+                <h3 class="font-light numbercompany">{{numberCompany}}</h3>
+                <div class="m-auto mt-2" style="height: 50px; width: 200px;">
+                    <canvas baseChart [datasets]="barChartData" [labels]="barChartLabels" [options]="barChartOptions"
+                        [colors]="barChartColors2" [legend]="barChartLegend" [chartType]="barChartType">
+                    </canvas>
+                </div>
+            </div>
+        </div>
+        <div class="card col-md-3 card3">
+            <div class="card-body cardH">
+                <h4 class="card-title m-b-0 stat3 ">Users Number</h4>
+                <div  class="row">
+               <div class="col-md-6"><h2 class="font-light numberuser " >{{numberUser}}</h2></div> 
+             
+                    <div align="center" class="col-md-6" style="margin-top:10%;">
+                        <circle-progress [percent]="90" [space]="-10" [radius]="30" [outerStrokeWidth]="2"
+                          [innerStrokeWidth]="1" [outerStrokeColor]="'yellow'" [innerStrokeColor]="'rgb(63, 152, 235)'" [animation]="true"
+                          [animationDuration]="800"></circle-progress>
+                      </div>
+            </div>
+            </div>
+        </div>
+
+        <div class="card col-md-3 card4">
+            <div class="card-body cardH">
+                <h5 class="card-title m-b-5 stat4 ">amount declared</h5>
+                <h3 class="font-light numberAmount">{{numberAmount}} Dh <span class="ttc">ttc</span></h3>
+                <div class="m-auto mt-2" style="height: 50px; width: 200px;">
+                    <canvas baseChart [datasets]="barChartData" [labels]="barChartLabels" [options]="barChartOptions"
+                        [colors]="barChartColors2" [legend]="barChartLegend" [chartType]="barChartType">
+                    </canvas>
+                </div>
+            </div>
+        </div>
+    <!-- </div> -->
+
+    
+</div>
+<!-- treatment Chart  -->
+<div class="row">
+    <div class="col-md-6">
+        <div class="card">
+            <div class="card-body ">
+                
+                    <h4 class="card-title ">
+                    <span class="titleChart">Latest 4 Invoice</span></h4>
+                
+                    <div style="display: block">
+                        <canvas baseChart
+                          [datasets]="barChartDataI"
+                          [labels]="barChartLabelsI"
+                          [options]="barChartOptionsI"
+                          [legend]="barChartLegendI"
+                          [chartType]="barChartTypeI">
+                        </canvas>
+                      </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-6">
+        <div class="card">
+            <div class="card-body  ">
+                <div class="">
+                    <h4 class="card-title ">
+                    <span class="titleChart">Total Invoice</span></h4></div>
+                
+                <div class="pieChart" class="mt-2  ">
+                    <canvas baseChart class="chartk"
+                    [data]="pieChartData1"
+                    [labels]="pieChartLabels1"
+                    [chartType]="pieChartType1"
+                    [options]="pieChartOptions1"
+                    [colors]="pieChartColors1"
+                    [legend]="pieChartLegend1">
+                   </canvas>
+            </div>
+            </div>
+        </div>
+        <!-- <div class="card">
+            <div class="card-body">
+                <h4 class="card-title m-b-0">Users</h4>
+                <h2 class="font-light">35,658 <span class="font-16 text-success font-medium">+23%</span></h2>
+                <div class="m-t-30">
+                    <div class="row text-center">
+                        <div class="col-6 border-right">
+                            <h4 class="m-b-0">58%</h4>
+                            <span class="font-14 text-muted">New Users</span>
+                        </div>
+                        <div class="col-6">
+                            <h4 class="m-b-0">42%</h4>
+                            <span class="font-14 text-muted">Repeat Users</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div> -->
+    </div>
+</div>
+
+<!-- End treatment Chart  -->
+
+<!-- ============================================================== -->
+<!-- Email campaign chart -->
+<!-- ============================================================== -->
+<!-- ============================================================== -->
+<!-- Ravenue - page-view-bounce rate -->
+<!-- ============================================================== -->
+<div class="row">
+    <!-- column -->
+    <div class="col-12">
+        <div class="card">
+            <div class="card-body">
+                <h4 class="card-title">5 Latest Company</h4>
+            </div>
+            <div class="table-responsive">
+                <div class="col-md-12">
+                <div class="smart-table-container">
+                <table class="table table-hover">
+                    <thead>
+                        <tr  class="table-primary"> 
+                            <th class="border-top-0">companyName</th>
+                            <th class="border-top-0">companyAdress</th>
+                            <th class="border-top-0">id_ice</th>
+                            <th class="border-top-0">id_if</th>
+                            <th class="border-top-0">id_rc</th>
+                           
+
+
+
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr *ngFor="let  company of companies | slice:0:5;">
+                            
+                            <td class="txt-oflo">{{company.companyName}}</td>
+                            <td><span class="label label-success label-rounded">{{company.companyAdress}}</span> </td>
+                            <td class="txt-oflo">{{company.id_ice}}</td>
+                            <td><span class="font-medium">{{company.id_if}}</span></td>
+                            <td class="txt-oflo">{{company.id_rc}}</td>
+                          
+
+                        </tr>
+                        <!-- <tr>
+                            
+                            <td class="txt-oflo">Real Homes WP Theme</td>
+                            <td><span class="label label-info label-rounded">EXTENDED</span></td>
+                            <td class="txt-oflo">April 19, 2017</td>
+                            <td><span class="font-medium">$1250</span></td>
+                        </tr>
+                        <tr>
+                            
+                            <td class="txt-oflo">Ample Admin</td>
+                            <td><span class="label label-purple label-rounded">Tax</span></td>
+                            <td class="txt-oflo">April 19, 2017</td>
+                            <td><span class="font-medium">$1250</span></td>
+                        </tr>
+                        <tr>
+                            
+                            <td class="txt-oflo">Medical Pro WP Theme</td>
+                            <td><span class="label label-success label-rounded">Sale</span></td>
+                            <td class="txt-oflo">April 20, 2017</td>
+                            <td><span class="font-medium">-$24</span></td>
+                        </tr>
+                        <tr>
+                            
+                            <td class="txt-oflo">Hosting press html</td>
+                            <td><span class="label label-success label-rounded">SALE</span></td>
+                            <td class="txt-oflo">April 21, 2017</td>
+                            <td><span class="font-medium">$24</span></td>
+                        </tr>
+                        <tr>
+                            
+                            <td class="txt-oflo">Digital Agency PSD</td>
+                            <td><span class="label label-danger label-rounded">Tax</span> </td>
+                            <td class="txt-oflo">April 23, 2017</td>
+                            <td><span class="font-medium">-$14</span></td>
+                        </tr> -->
+                    </tbody>
+                </table>
+                </div></div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- ============================================================== -->
+<!-- Ravenue - page-view-bounce rate -->
+<!-- ============================================================== -->
+<!-- ============================================================== -->
+<!-- Recent comment and chats -->
+<!-- ============================================================== -->
+
+<!-- ============================================================== -->
+<!-- Recent comment and chats -->
+<!-- ============================================================== -->

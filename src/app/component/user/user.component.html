@@ -1,0 +1,79 @@
+<link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<!------ Include the above in your HEAD tag ---------->
+
+<div class="container login-container">
+            <!-- <div class="alert alert-warning tet" *ngIf="userForm.invalid && (userForm.dirty || userForm.touched)">Enter Valid values</div>
+            <div class="alert alert-warning tet" *ngIf="username.invalid">Enter Valid username</div> -->
+     <h4 class="note" *ngIf="idUser!= -1">Update User</h4>
+     <h4 class="note" *ngIf="idUser == -1"> Add User</h4>
+            <form [formGroup]="userForm"   (ngSubmit)="submitForm()"> 
+                <div class="row">
+               
+                    <div class="col-md-6 login-form-1">
+                        <h3> Personel Information</h3>
+                        <!-- <form> -->
+                            <div class="form-group">
+                                <input type="text" class="form-control" placeholder="Your Username *" value="{{user.username}}" 
+                                 [(ngModel)]="user.username"
+                                 required ="required" formControlName="username"      
+                                                  
+                                 [ngClass]="{ 'is-invalid':userForm.get('username').touched && submitted && f.username.errors }"/> 
+                                 <div *ngIf="submitted && f.username.errors"class="invalid-feedback">                         
+                                    <div *ngIf="f.username.errors.required && userForm.get('username').touched 
+                                    || userForm.get('username').dirty">UserName must be More than 6 Character</div>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <input type="email" class="form-control" placeholder="Your Email *" value=""
+                                [(ngModel)]="user.email"
+                                [ngClass]="{ 'is-invalid': userForm.get('email').touched &&  submitted && f.email.errors }"
+                                   
+                                 required ="required" formControlName="email"/>
+                                 <div *ngIf="submitted && f.email.errors"   class="invalid-feedback">
+                                    <div *ngIf="f.email.errors.required && 
+                                    userForm.get('email').touched|| userForm.get('email').dirty">Email is required</div>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <input type="password" class="form-control" placeholder="Your Password *" value=""
+                                [(ngModel)]="user.password" 
+                                [ngClass]="{ 'is-invalid':userForm.get('password').touched && submitted && f.password.errors }"
+                                  required="required" formControlName="password"/>
+                                  <div *ngIf="submitted && f.password.errors "class="invalid-feedback">
+                                    <div *ngIf="f.email.errors.required &&
+                                   userForm.get('password').touched|| userForm.get('password').dirty">
+                                   Password  must be More than 6 Character</div>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <input type="password" class="form-control" placeholder="Confirm Password *" value="" 
+                                [ngClass]="{ 'is-invalid':userForm.get('repeat_password').touched && submitted && f.repeat_password.errors }"
+                                [(ngModel)]="repeat_password"
+                                 required ="required" formControlName="repeat_password"/>
+                                 <div *ngIf="submitted && f.repeat_password.errors"
+                                  class="invalid-feedback">
+                                    <div *ngIf="f.repeat_password.errors.required  &&
+                                    userForm.get('repeat_password').touched|| userForm.get('repeat_password').dirty">
+                                    The two password is not identical</div>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <button type="submit" class="btnSubmit" >Insert</button>
+                            </div>
+                            
+                        <!-- </form> -->
+                    </div>
+                <div class="col-md-6 login-form-2">
+                    <h3>Company Information</h3>
+                    <select class="form-control"  (change)="selectChangeHandler($event)" >
+                        <option>...</option>
+                        <option  *ngFor="let company of companies" value="{{company.id}}">{{company.companyName}}</option>
+                      
+                      </select>
+                </div>
+            </div>          
+          </form>
+
+        </div>

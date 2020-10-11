@@ -1,0 +1,135 @@
+<link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<!------ Include the above in your HEAD tag ---------->
+<div class="kol">
+<div class="container login-container">
+            <!-- <div class="alert alert-warning tet" *ngIf="userForm.invalid && (userForm.dirty || userForm.touched)">Enter Valid values</div>
+            <div class="alert alert-warning tet" *ngIf="username.invalid">Enter Valid username</div> -->
+          <h2 class="note">Inscription</h2>
+            <form [formGroup]="userForm" (ngSubmit)="submitForm()"> 
+                <div class="row">
+               
+                <div class="col-md-6 login-form-1">
+                    <h3> Personel Information</h3>
+                    <!-- <form> -->
+                        <div class="form-group">
+                            <input type="text" class="form-control" placeholder="Your Username *" value="" 
+                             [(ngModel)]="user.username"
+                             required ="required" formControlName="username"                             
+                             [ngClass]="{ 'is-invalid':userForm.get('username').touched && submitted && f.username.errors }"/> 
+                             <div *ngIf="submitted && f.username.errors"class="invalid-feedback">                         
+                                <div class="formCo1" *ngIf="f.username.errors.required && userForm.get('username').touched 
+                                || userForm.get('username').dirty">UserName must be More than 6 Character</div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <input type="email" class="form-control" placeholder="Your Email *" value=""
+                            [(ngModel)]="user.email"
+                            [ngClass]="{ 'is-invalid': userForm.get('email').touched &&  submitted && f.email.errors }"
+                             required ="required" formControlName="email"/>
+                             <div *ngIf="submitted && f.email.errors"   class="invalid-feedback">
+                                <div  class="formCo1" *ngIf="f.email.errors.required && 
+                                userForm.get('email').touched|| userForm.get('email').dirty">Email is required</div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <input type="password" class="form-control" placeholder="Your Password *" value=""
+                            [(ngModel)]="user.password"
+                            [ngClass]="{ 'is-invalid':userForm.get('password').touched && submitted && f.password.errors }"
+                              required="required" formControlName="password"/>
+                              <div *ngIf="submitted && f.password.errors "class="invalid-feedback">
+                                <div class="formCo1" *ngIf="f.email.errors.required &&
+                               userForm.get('password').touched|| userForm.get('password').dirty">
+                               Password  must be More than 6 Character</div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <input type="password" class="form-control" placeholder="Confirm Password *" value="" 
+                            [ngClass]="{ 'is-invalid':userForm.get('repeat_password').touched && submitted && f.repeat_password.errors }"
+                            [(ngModel)]="repeat_password"
+                             required ="required" formControlName="repeat_password"/>
+                             <div *ngIf="submitted && f.repeat_password.errors"
+                              class="invalid-feedback">
+                                <div class="formCo1" *ngIf="f.repeat_password.errors.required  &&
+                                userForm.get('repeat_password').touched|| userForm.get('repeat_password').dirty">
+                                The two password is not identical</div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <button type="submit" class="btnSubmit" >Login</button>
+                        </div>
+                        
+                    <!-- </form> -->
+                </div>
+                <div class="col-md-6 login-form-2">
+                    <h3>Company Information</h3>
+                    
+                        <div class="form-group">
+                            <input type="text" class="form-control" placeholder="Company Name *" value="" 
+                            [(ngModel)]="user.companies[0].companyName" 
+                            [ngClass]="{ 'is-invalid':userForm.get('companyName').touched && submitted && f.companyName.errors }"                    
+                             required = "required"  formControlName="companyName"/>
+                             <div *ngIf="submitted && f.companyName.errors " 
+                             class="invalid-feedback">
+                                <div class="formCo" *ngIf="f.companyName.errors.required && 
+                                userForm.get('companyName').touched|| userForm.get('companyName').dirty">
+                                Company Name is required</div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <input type="text" class="form-control" placeholder="Company Adress" value=""
+                            [(ngModel)]="user.companies[0].companyAdress"
+                            [ngClass]="{ 'is-invalid':userForm.get('companyAdress').touched && submitted && f.companyAdress.errors }"                       
+                            required = "required"   formControlName="companyAdress"/>
+                            <div *ngIf="submitted && f.companyAdress.errors " 
+                            class="invalid-feedback">
+                                <div class="formCo" *ngIf="f.companyAdress.errors.required && 
+                                userForm.get('companyAdress').touched|| userForm.get('companyAdress').dirty">
+                                Company Adress is required</div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <input type="text" class="form-control" placeholder="Company ICE" value=""
+                            [(ngModel)]="user.companies[0].id_ice" 
+                            [ngClass]="{ 'is-invalid':userForm.get('company_ice').touched && submitted && f.company_ice.errors }"                         
+                            required = "required"   formControlName="company_ice"/>
+                            <div *ngIf="submitted && f.company_ice.errors " 
+                            class="invalid-feedback">
+                                <div class="formCo" *ngIf="f.company_ice.errors.required && 
+                                userForm.get('company_ice').touched|| userForm.get('company_ice').dirty">
+                                Company ICE is required</div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <input type="text" class="form-control" placeholder="Company IF" value="" 
+                            [(ngModel)]="user.companies[0].id_if"
+                            [ngClass]="{ 'is-invalid':userForm.get('company_if').touched && submitted && f.company_if.errors }"                          
+                             required = "required"  formControlName="company_if" />
+                             <div class="formCo" *ngIf="submitted && f.company_if.errors " 
+                             class="invalid-feedback">
+                                <div class="formCo" *ngIf="f.company_if.errors.required && 
+                                userForm.get('company_if').touched|| userForm.get('company_if').dirty">
+                                Company IF is required</div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <input type="text" class="form-control" placeholder="Company RC" value=""
+                            [(ngModel)]="user.companies[0].id_rc" 
+                            [ngClass]="{ 'is-invalid':userForm.get('company_rc').touched && submitted && f.company_rc.errors }"
+                              required = "required"  formControlName="company_rc"/>
+                              <div *ngIf="submitted && f.company_rc.errors "
+                               class="invalid-feedback">
+                                <div class="formCo" *ngIf="f.company_rc.errors.required && 
+                                userForm.get('company_rc').touched|| userForm.get('company_rc').dirty">
+                                Company RC is required</div>
+                            </div>
+                        </div>
+                       
+                    
+                </div>
+            </div>          
+          </form>
+
+        </div>
+    </div>

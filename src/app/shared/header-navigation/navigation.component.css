@@ -1,0 +1,15 @@
+
+.stat3{
+    margin-top: 20px;
+    background-color: rgb(184, 167, 192);
+    color: white;
+    font-size: 20px;
+    padding-left: 20%;
+    width: 200px;
+    max-height: 25px;
+    border-radius: 5px;
+}
+.all_nav
+{
+    max-height: 2000px;
+}

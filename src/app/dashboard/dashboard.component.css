@@ -1,0 +1,141 @@
+.stat1{
+    background-color: white;
+    color: #2980B9;
+    font-size: 20px;
+    padding-left: 20%;
+    
+
+}
+.numberinvoice
+{   font-size: 60px;
+    color:  white;
+    padding-top: 18px;
+    padding-left: 10%;
+
+}
+.stat2{
+    background-color:  white;
+    color: #F39C12;
+    font-size: 20px;
+    padding-left: 4%;
+    
+
+}
+.numbercompany
+{
+    font-size: 60px;
+    color: white;
+    padding-top: 18px;
+    padding-left: 2px;
+}
+
+.stat3{
+    background-color: white;
+    color: #27AE60;
+    font-size: 20px;
+    padding-left: 20%;
+    
+}
+.numberuser{
+    font-size: 60px;
+    color: white;
+    padding-top: 18px;
+    padding-left: 10%;
+}
+.stat4{
+    background-color:  white;
+    color: #D35400;
+    font-size: 20px;
+    padding-left: 17%;
+    border-bottom: solid 2px rgb(253, 253, 253) ;
+
+
+}
+.numberAmount{
+    font-size: 20px;
+    color: white;
+    padding-top: 18px;
+    padding-left: 10%;
+}
+    
+
+
+.cardH
+{
+    height: 170px;
+}
+
+.card1{
+    /* background: -webkit-linear-gradient(left, #4a63f1,rgb(253, 234, 234)); */
+    background-color: #2980B9;
+    padding: 2px;
+    max-width: 260px;
+    margin-left: auto;
+    margin-right: auto;
+}
+.card2{
+    /* background: -webkit-linear-gradient(left, #909197,rgb(245, 238, 238)); */
+    background-color: #F39C12;
+    max-width: 260px;
+    margin-left: auto;
+    margin-right: auto;
+    
+
+}
+.card3{
+    /* background: -webkit-linear-gradient(left, #ff8b2d,rgb(255, 255, 255)); */
+    background-color: #27AE60;
+    padding: 2px;   
+    max-width: 260px;
+    margin-left: auto;
+    margin-right: auto;}
+.card4{
+    /* background: -webkit-linear-gradient(left, #e41919,rgb(255, 241, 241)); */
+    background-color: #D35400;
+        padding: 2px;   
+        max-width: 260px;
+        margin-left: auto;
+        margin-right: auto;}
+
+    #AEB404
+.card-body{
+    padding: 10px;
+    max-height: 170px;
+    
+}
+
+.card_f{
+   height: 1000px;
+}
+
+.ttc{
+    font-size: 15px;
+}
+
+.cardTitle
+{
+    max-width: 400px;
+    margin-left: 60px;
+    margin-bottom: 30px;
+}
+
+.pieChart
+{
+    max-height: 200px;
+   
+}
+
+.alert{
+    max-width: 120px;
+    max-height: 40px;
+}
+
+.titleChart{
+    background: -webkit-linear-gradient(left, #4a63f1,rgb(253, 234, 234));
+    color:-webkit-linear-gradient(left,rgb(253, 234, 234), #4a63f1);
+    width: 100px;
+    
+}
+.chartk{
+    height: 400px;
+}

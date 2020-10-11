@@ -1,0 +1,18 @@
+.title{
+    color:white;
+    /* margin-left: 110px; */
+    /* border-bottom: solid 3px rgb(194, 208, 247); */
+    font-size:20px;
+    animation-name: drive;
+    animation-duration: 3s;
+    background-color: #6D8CF7;
+    max-width: 250px;
+    min-width: 250px;
+    padding-left: 5%;
+    border-radius: 5px;
+}
+
+@keyframes drive{
+    from {transform: translateX(-300px);}
+    to{transform: translateX(0);}
+}

@@ -1,0 +1,37 @@
+<div class=" alert alert-success" *ngIf='message'>{{message}}</div>
+<div class="note">
+  <h1>Companies Manage</h1>
+</div>
+<div  class="container" id="customers"> 
+<table border="1" class="table  users">
+   
+    <thead class="">
+        <tr>
+            <th>CompanyName</th>
+            <th>CompanyAdress</th>
+            <th>id_ice</th>
+            <th>id_if</th>
+            <th>id_rc</th>
+            <th>Delete</th>
+            <th>Update</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let company of companies">
+            <td>{{company.companyName}}</td>
+            <td>{{company.companyAdress}}</td>
+            <td>{{company.id_ice}}</td>
+            <td>{{company.id_if}}</td>
+            <td>{{company.id_rc}}</td>
+            <td><button (click)="deleteCompany(company.id)" class="btn btn-warning">Delete Compny</button></td>
+            <td><button (click)="updateCompany(company.id)" class="btn btn-primary">Update Compny</button></td>
+
+        </tr>
+    </tbody>
+</table>
+
+<div class="row">
+    <button (click)="AddCompany()"  class="btn btn-success add">Add Company</button>
+</div>
+
+</div>

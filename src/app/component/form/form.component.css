@@ -1,0 +1,49 @@
+.note
+{
+    text-align: center;
+    height: 30px;
+    background-color: white;
+    color: #2282C0;
+    font-weight: bold;
+    line-height: 40px;
+    font-size: 20px;
+    font-style: oblique 30deg;
+    max-width: 300px;
+    margin-left: 340px;
+}
+
+.canvas{
+    margin-left: 700px;
+    border: double;
+    border-color: #b9d7e0;
+    max-width: 445px;
+    background-color: white;
+
+}
+
+.download
+{
+    background-color: #9EF5CF;
+}
+
+/* .buttonImport{
+    height: 20px;
+    color: white;
+} */
+
+.back{
+    background-color: burlywood;
+    margin-right: 5px;
+}
+
+.tab{
+    width: 1000px;
+    float: right;
+    margin-right: 100px;
+    border: double;
+    border-color: #b9d7e0;
+}
+.noteImport{
+   margin-left: 30px;
+}
+

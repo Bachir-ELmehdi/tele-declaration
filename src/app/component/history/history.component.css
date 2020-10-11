@@ -1,0 +1,15 @@
+.note
+{
+    text-align: center;
+    height: 30px;
+    width: 180px;
+    background: #2980B9;
+    color: #fff;
+    font-weight: bold;
+    line-height: 40px;
+    font-size: 40px;
+    font-style: oblique 30deg;
+    right: auto;
+    position: relative;
+    margin-left: 20px;
+}

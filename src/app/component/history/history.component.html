@@ -1,0 +1,53 @@
+
+<HR>
+<div class="table-responsive" *ngFor="let company of companies">
+    <div class="note"> <h3>Company : {{company.companyName}}</h3></div><br>
+    <div class="col-md-12" style = "overflow-x: scroll;overflow-y: scroll;">
+        <div class="smart-table-container" style = "width: 2000px; max-height: 700px;">
+    <table class="table table-hover">
+        <thead>
+            <tr  class="table-primary"> 
+                <th class="border-top-0">N° d’ordre de la facture</th>
+                <th class="border-top-0">N° de facture</th>
+                <th class="border-top-0">Désignation du bien ou service</th>
+                <th class="border-top-0">HT</th>
+                <th class="border-top-0">TVA</th>
+                <th class="border-top-0">TTC</th>
+                <th class="border-top-0">Identifiant fiscale du fournisseur</th>
+                <th class="border-top-0">Nom ou Raison sociale du fournisseur</th>
+                <th class="border-top-0">ICE du fournisseur</th>
+                <th class="border-top-0">Taux de la taxe</th>
+                <th class="border-top-0">mode paiement</th>
+                <th class="border-top-0">Date paiement</th>
+                <th class="border-top-0">Date facture</th>
+                <th class="border-top-0">Prorata %</th>
+
+
+
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let  invoice of company.invoices">
+                
+                <td class="txt-oflo">{{invoice.num_order_fac}}</td>
+                <td><span class="label label-success label-rounded">{{invoice.num_fac}}</span> </td>
+                <td class="txt-oflo">{{invoice.designation_bien}}</td>
+                <td><span class="font-medium">{{invoice.ht}}</span></td>
+                <td class="txt-oflo">{{invoice.tva}}</td>
+                <td class="txt-oflo">{{invoice.ttc}}</td>
+                <td class="txt-oflo">{{invoice.id_fiscal_fornisseur}}</td>
+                <td class="txt-oflo">{{invoice.raison_social_fornissuer}}</td>
+                <td class="txt-oflo">{{invoice.ice_fornisseur}}</td>
+                <td class="txt-oflo">{{invoice.taux_taxe}}</td>
+                <td class="txt-oflo">{{invoice.mode_paiment}}</td>
+                <td class="txt-oflo">{{invoice.date_paiment}}</td>
+                <td class="txt-oflo">{{invoice.date_facture}}</td>
+                <td class="txt-oflo">{{invoice.prorata}}</td>
+
+            </tr>
+            
+        </tbody>
+    </table>
+    </div></div>
+    <hr>
+</div>
